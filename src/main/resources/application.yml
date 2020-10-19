@@ -1,0 +1,12 @@
+spring:
+  r2dbc:
+    url: "r2dbc:postgresql://localhost:5432/catalizator"
+    username: postgres
+    password: test123
+  flyway:
+    url: "jdbc:postgresql://localhost:5432/catalizator"
+    user: postgres
+    password: test123
+
+logging.level.org.springframework:
+  data.r2dbc: DEBUG

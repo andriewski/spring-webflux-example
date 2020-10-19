@@ -31,7 +31,6 @@ public class GreetingHandler {
                         "Fifth",
                         "Sixth",
                         "Seventh"
-
                 )
                 .skip(start)
                 .take(count)
