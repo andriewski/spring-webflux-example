@@ -1,6 +1,7 @@
 package by.mark.webflux.config;
 
 import by.mark.webflux.controller.MessageController;
+import lombok.RequiredArgsConstructor;
 import org.springframework.context.annotation.Bean;
 import org.springframework.security.config.annotation.method.configuration.EnableReactiveMethodSecurity;
 import org.springframework.security.config.annotation.web.reactive.EnableWebFluxSecurity;
@@ -13,13 +14,19 @@ import static by.mark.webflux.controller.UserController.USER_PATH;
 
 @EnableWebFluxSecurity
 @EnableReactiveMethodSecurity
+@RequiredArgsConstructor
 public class WebSecurityConfig {
+
+    private final AuthenticationManager authenticationManager;
+    private final SecurityContextRepository securityContextRepository;
 
     @Bean
     public SecurityWebFilterChain securityWebFilterChain(ServerHttpSecurity httpSecurity) {
         return httpSecurity
                 .csrf().disable()
-                .formLogin().and()
+                .formLogin().disable()
+                .authenticationManager(authenticationManager)
+                .securityContextRepository(securityContextRepository)
                 .httpBasic().and()
                 .authorizeExchange()
                 .pathMatchers("/", "/login", USER_PATH, "favicon.ico").permitAll()
