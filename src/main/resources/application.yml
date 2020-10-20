@@ -10,3 +10,7 @@ spring:
 
 logging.level.org.springframework:
   data.r2dbc: DEBUG
+
+jwt:
+  secret: strong-password-strong-password-strong-password-strong-password-strong-password
+  expiration: 864000

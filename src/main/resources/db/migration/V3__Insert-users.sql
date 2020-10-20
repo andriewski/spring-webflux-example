@@ -1,0 +1,2 @@
+INSERT INTO public.usr (id, username, password, role) VALUES (1, 'user', '$2a$10$1FOUHufJ13JvmYSxOGenr.xgjnZzWbP5isiHAffLqFbCVnK/I2TBO', 'ROLE_USER');
+INSERT INTO public.usr (id, username, password, role) VALUES (2, 'admin', '$2a$10$YRrTRU.tZG2GjxNjjb6vs.8pBzcyhPwj//uD8nMWEEMDtD39cSt42', 'ROLE_ADMIN');
